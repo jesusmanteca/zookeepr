@@ -1,0 +1,24 @@
+{
+  "name": "zookeepr",
+  "version": "1.0.0",
+  "description": "An app that allows the storage of animals for a zoo to a server using Heroku",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jesusmanteca/zookeepr.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jesusmanteca/zookeepr/issues"
+  },
+  "homepage": "https://github.com/jesusmanteca/zookeepr#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
