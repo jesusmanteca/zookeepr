@@ -5,9 +5,12 @@ const path = require('path');
 const { animals } = require('./data/animals');
 
 
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3333;
 //instantiates the server so that we can later chain on methods to the Express.js server
 const app = express();
+
+// middleware that instructs the server to make certain files readily available and to not gate it behind a server endpoint
+app.use(express.static('public'));
 // parse incoming string or array data
 app.use(express.urlencoded({ extended: true }));
 // parse incoming JSON data
@@ -120,6 +123,17 @@ app.post('/api/animals', (req, res) => {
         res.json(animal);
     }
 });
+
+// GET HTML ROUTES
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/index.html'));
+});
+app.get('/animals', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/animals.html'));
+});
+app.get('/zookeepers', (req, res) => {
+    res.sendFile(path.join(__dirname, './public/zookeepers.html'));
+  });
 
 // method to make our server listen
 app.listen(PORT, () => {
