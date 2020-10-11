@@ -85,7 +85,7 @@ function validateAnimal(animal) {
   }
 
 
-// add the GET routes
+// GET ROUTES
 app.get('/api/animals', (req, res) => {
     // res.send('<h1>Hello!</h1>');
     // res.json(animals);
@@ -103,6 +103,8 @@ app.get('/api/animals/:id', (req, res) => {
         res.send(404);
     }
 });
+
+// POST ROUTES
 app.post('/api/animals', (req, res) => {
     // req.body is where our incoming content will be but first we give it an id and validate it to make sure it fits our style
 
